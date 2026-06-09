@@ -353,12 +353,45 @@
   .sd.k { background: #bbf7d0; border-color: #22c55e; }
   .sd.r { background: #fecaca; border-color: #f87171; color: #dc2626; }
   .sd.e { background: transparent; border-color: transparent; }
+
+  /* ── Mobile: allow horizontal scroll of the wide floor plan ── */
+  .mobile-hint { display: none; }
+  @media (max-width: 900px) {
+    body {
+      min-width: 0;
+      padding: 14px 12px;
+      overflow-x: auto;
+    }
+    h1 { font-size: 16px; }
+    .subtitle { font-size: 11px; margin-bottom: 12px; }
+    .legend { gap: 8px; margin-bottom: 12px; }
+    .leg { font-size: 10px; }
+    .floor-plan {
+      width: 1300px;
+      min-width: 1300px;
+    }
+    .mobile-hint {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: #fef3c7;
+      border: 1px solid #f59e0b;
+      border-radius: 6px;
+      padding: 8px 12px;
+      font-size: 12px;
+      color: #92400e;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+  }
 </style>
 </head>
 <body>
 
 <h1>Wix Payments IL — Floor Map <span class="badge">Draft · June 2026</span></h1>
 <p class="subtitle">Proposed seating after restructure · Walk from right: Bathroom → Dining → 206 → 208 → 210 → 218 → 222</p>
+
+<div class="mobile-hint">👉 Swipe sideways to see all rooms · Rotate phone for better view</div>
 
 <!-- Legend -->
 <div class="legend">
