@@ -372,33 +372,26 @@
   .sd.pending { background: #fed7aa; border-color: #ea580c; color: #7c2d12; border-style: dashed; border-width: 2px; }
 
   /* ── Mobile: allow horizontal scroll of the wide floor plan ── */
-  .mobile-hint { display: none; }
+  /* ── Floor plan scroll wrapper — keeps page at device width on mobile ── */
+  .floor-plan-wrap {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    border-radius: 4px;
+  }
   @media (max-width: 900px) {
     body {
       min-width: 0;
       padding: 14px 12px;
-      overflow-x: auto;
+      overflow-x: hidden;
     }
-    h1 { font-size: 16px; }
-    .subtitle { font-size: 11px; margin-bottom: 12px; }
-    .legend { gap: 8px; margin-bottom: 12px; }
-    .leg { font-size: 10px; }
+    h1 { font-size: 18px; }
     .floor-plan {
       width: 1300px;
       min-width: 1300px;
     }
-    .mobile-hint {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      background: #fef3c7;
-      border: 1px solid #f59e0b;
-      border-radius: 6px;
-      padding: 8px 12px;
-      font-size: 12px;
-      color: #92400e;
-      font-weight: 600;
-      margin-bottom: 12px;
+    .floor-plan-wrap {
+      box-shadow: inset -12px 0 12px -10px rgba(0,0,0,.15);
     }
   }
 
@@ -432,10 +425,11 @@
     letter-spacing: .3px;
   }
   .announcement-body {
-    font-size: 12.5px;
+    font-size: 15px;
     color: #1e293b;
-    line-height: 1.55;
-    margin-bottom: 10px;
+    line-height: 1.5;
+    margin-bottom: 12px;
+    font-weight: 500;
   }
   .announcement-actions {
     display: flex;
@@ -530,20 +524,20 @@
       <div class="action-text"><strong>Questions or concerns?</strong> Reach out to your manager or to Alona.</div>
     </div>
     <div class="action-item">
-      <div class="action-icon">📱</div>
-      <div class="action-text">👉 Swipe sideways to see all rooms · Rotate phone for better view</div>
-    </div>
-    <div class="action-item">
       <div class="action-icon">📅</div>
       <div class="action-text"><strong>See you Sunday</strong> in your new seat! ☀️</div>
+    </div>
+    <div class="action-item">
+      <div class="action-icon">📱</div>
+      <div class="action-text">👉 Swipe sideways to see all rooms · Rotate phone for better view</div>
     </div>
   </div>
 </div>
 
-<div class="mobile-hint">👉 Swipe sideways to see all rooms · Rotate phone for better view</div>
 
 
 <!-- Floor Plan -->
+<div class="floor-plan-wrap">
 <div class="floor-plan">
 
   <!-- North wall indicator -->
@@ -583,26 +577,20 @@
           <div class="sd e"></div><div class="sd e"></div><div class="sd e"></div><div class="sd k">Shir</div>
         </div>
       </div>
-      <div class="grp-lbl">Finance &amp; Partnerships</div>
+      <div class="grp-lbl">Team</div>
       <div class="chips">
         <span class="chip ayelet">Ido Shamash</span>
         <span class="chip ayelet">Yarin Stern</span>
         <span class="chip ayelet">Ron Daniel</span>
         <span class="chip ayelet">Omer Arbiv</span>
-      </div>
-      <div class="grp-lbl">Legal</div>
-      <div class="chips">
         <span class="chip ayelet">Danielle Dulitzky</span>
         <span class="chip ayelet">Zohar Chikorel</span>
         <span class="chip ayelet">Shir Livneh</span>
-      </div>
-      <div class="grp-lbl">Portfolio</div>
-      <div class="chips">
         <span class="chip ayelet">Ayelet Yitzhak Tal</span>
         <span class="chip ayelet">Tom Jeni Gazala</span>
         <span class="chip ayelet">Alona Oren</span>
-        <span class="chip ayelet">Asa</span>
-        <span class="chip ayelet">Nurit</span>
+        <span class="chip ayelet">Asa Zaidman</span>
+        <span class="chip ayelet">Nurit Hadari</span>
       </div>
     </div>
 
@@ -636,7 +624,7 @@
         <span class="chip risk">Daniela Montero</span>
         <span class="chip risk">Elad Tal</span>
         <span class="chip risk">Oren Richter</span>
-        <span class="chip risk">Schneur K.</span>
+        <span class="chip risk">Schneur Kamensky</span>
         <span class="chip risk">Sophie Goldstein</span>
         <span class="chip risk">Valeria Rysevaa</span>
         <span class="chip mat">🤱 Viktoriia L.</span>
@@ -665,7 +653,7 @@
           <div class="sd e"></div><div class="sd e"></div><div class="sd e"></div><div class="sd k"></div>
         </div>
       </div>
-      <div class="grp-lbl">Data Science</div>
+      <div class="grp-lbl">Team</div>
       <div class="chips">
         <span class="chip ds">Itai Arad</span>
         <span class="chip ds">Oded Luria</span>
@@ -711,7 +699,7 @@
         <span class="chip fin">Omer Shazky</span>
         <span class="chip fin">Ram Bercovitch</span>
         <span class="chip fin">Idan Abraham</span>
-        <span class="chip fin">Alexander G.</span>
+        <span class="chip fin">Alex Grinberg</span>
         <span class="chip fin">Raz Yaron</span>
         <span class="chip mat">🤱 Yael Baifus</span>
 
@@ -747,6 +735,7 @@
 
 
 </div><!-- /floor-plan -->
+</div><!-- /floor-plan-wrap -->
 
 </body>
 </html>
