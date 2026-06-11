@@ -93,7 +93,7 @@
   /* widths based on floor plan proportions */
   .r222 { flex: 17; background: var(--guest-fill); }
   .r218 { flex: 17; background: var(--ayelet-fill); }
-  .r210 { flex: 14; background: var(--risk-fill); }
+  .r210 { flex: 17; background: var(--risk-fill); }
   .r208 { flex: 17; background: var(--ds-fill); }
   .r206 { flex: 17; background: var(--fin-fill); }
   .rbath { flex: 9; background: var(--bath-fill); }
@@ -328,13 +328,23 @@
   /* Window bar — shown at top of sg-wrap for rooms with/without pillar */
   .win-bar {
     width: 100%;
-    height: 7px;
-    background: #bfdbfe;
+    height: 14px;
+    background: repeating-linear-gradient(90deg, #bfdbfe 0 8px, #93c5fd 8px 10px);
+    border: 1px solid #60a5fa;
     border-radius: 3px;
     display: flex;
     align-items: center;
+    justify-content: center;
     padding: 0 3px;
     position: relative;
+    font-size: 8px;
+    font-weight: 800;
+    color: #1e40af;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+  .win-bar::before {
+    content: '🪟 Window';
   }
   .win-bar.has-pillar::after {
     content: '';
@@ -358,6 +368,8 @@
   .sd.k { background: #bbf7d0; border-color: #22c55e; color: #14532d; }
   .sd.r { background: #fecaca; border-color: #f87171; color: #dc2626; font-size: 11px; }
   .sd.e { background: transparent; border-color: transparent; }
+  .sd.changed { background: #fef08a; border-color: #ca8a04; color: #713f12; box-shadow: 0 0 0 2px #fde68a; }
+  .sd.pending { background: #fed7aa; border-color: #ea580c; color: #7c2d12; border-style: dashed; border-width: 2px; }
 
   /* ── Mobile: allow horizontal scroll of the wide floor plan ── */
   .mobile-hint { display: none; }
@@ -393,8 +405,8 @@
 </head>
 <body>
 
-<h1>Wix Payments IL — Floor Map <span class="badge">Draft · June 2026</span></h1>
-<p class="subtitle">Proposed seating after restructure · Walk from right: Bathroom → Dining → 206 → 208 → 210 → 218</p>
+<h1>Wix Payments IL — Floor Map <span class="badge">June 2026</span></h1>
+<p class="subtitle">Approved seating · Walk from right: Bathroom → Dining → 206 → 208 → 210 → 218</p>
 
 <div class="mobile-hint">👉 Swipe sideways to see all rooms · Rotate phone for better view</div>
 
@@ -405,7 +417,7 @@
   <div class="leg"><div class="leg-dot" style="background:var(--risk-fill);border-color:var(--risk-border)"></div> Portfolio–Risk (210)</div>
   <div class="leg"><div class="leg-dot" style="background:var(--ayelet-fill);border-color:var(--ayelet-border)"></div> Legal · Finance · Portfolio — Ayelet (218)</div>
   <div class="leg"><div class="leg-dot" style="background:var(--mat-bg);border-color:#7dd3fc"></div> On maternity</div>
-  <div class="leg"><div class="leg-dot" style="background:#374151;border-color:#1f2937;border-radius:3px"></div> Building pillar (עמוד)</div>
+  <div class="leg"><div class="leg-dot" style="background:#fed7aa;border-color:#ea580c"></div> Pending / TBD</div>
 </div>
 
 <!-- Floor Plan -->
@@ -417,7 +429,7 @@
   <!-- Room label strip -->
   <div class="room-labels">
     <div class="rl" style="flex:17">ROOM 218</div>
-    <div class="rl" style="flex:14">ROOM 210</div>
+    <div class="rl" style="flex:17">ROOM 210</div>
     <div class="rl" style="flex:17">ROOM 208</div>
     <div class="rl" style="flex:17">ROOM 206</div>
     <div class="rl" style="flex:9;border-right:none">WC</div>
@@ -434,8 +446,8 @@
       <div class="room-sub">(Ayelet) · cap. 13</div>
       <div class="mini-stats">
         <div class="ms"><div class="ms-val">13</div><div class="ms-lbl">Cap</div></div>
-        <div class="ms"><div class="ms-val">11</div><div class="ms-lbl">People</div></div>
-        <div class="ms"><div class="ms-val">2</div><div class="ms-lbl">Open</div></div>
+        <div class="ms"><div class="ms-val">12</div><div class="ms-lbl">People</div></div>
+        <div class="ms"><div class="ms-val">1</div><div class="ms-lbl">Open</div></div>
       </div>
       <div class="change-note">← Was: Legal & Finance</div>
       <!-- Desk grid: 218 — 3|3 | aisle | 3|4 = 13 desks, remove col4 row4 -->
@@ -443,31 +455,32 @@
       <div class="sg-wrap">
         <div class="win-bar"></div>
         <div class="sg">
-          <div class="sd k">Zohar</div><div class="sd k">Ayelet</div><div class="sd k">Ron D.</div><div class="sd k">Omer Arbiv</div>
-          <div class="sd k">Danielle</div><div class="sd k">Tom</div><div class="sd k">Alona</div><div class="sd k">Ido</div>
-          <div class="sd k">Shir</div><div class="sd k">Val</div><div class="sd k"></div><div class="sd k">Yarin</div>
-          <div class="sd e"></div><div class="sd e"></div><div class="sd e"></div><div class="sd k"></div>
+          <div class="sd k">Tom</div><div class="sd k">Ayelet</div><div class="sd k">Ron D.</div><div class="sd k">Omer A.</div>
+          <div class="sd k">Asa</div><div class="sd k">Alona</div><div class="sd k">Zohar</div><div class="sd k">Ido</div>
+          <div class="sd k">Nurit</div><div class="sd k"></div><div class="sd k">Danielle</div><div class="sd k">Yarin</div>
+          <div class="sd e"></div><div class="sd e"></div><div class="sd e"></div><div class="sd k">Shir</div>
         </div>
+      </div>
+      <div class="grp-lbl">Finance &amp; Partnerships</div>
+      <div class="chips">
+        <span class="chip ayelet">Ido Shamash</span>
+        <span class="chip ayelet">Yarin Stern</span>
+        <span class="chip ayelet">Ron Daniel</span>
+        <span class="chip ayelet">Omer Arbiv</span>
       </div>
       <div class="grp-lbl">Legal</div>
       <div class="chips">
-        <span class="chip ayelet">Ido Shamash</span>
-        <span class="chip ayelet">Ron Daniel</span>
-        <span class="chip ayelet">Shir Livneh</span>
-        <span class="chip ayelet">Yarin Stern</span>
-      </div>
-      <div class="grp-lbl">Finance & Portfolio</div>
-      <div class="chips">
         <span class="chip ayelet">Danielle Dulitzky</span>
         <span class="chip ayelet">Zohar Chikorel</span>
-        <span class="chip ayelet">Omer Arbiv</span>
-        <span class="chip ayelet">Tom Jeni Gazala</span>
+        <span class="chip ayelet">Shir Livneh</span>
       </div>
-      <div class="grp-lbl">Ops & Leadership</div>
+      <div class="grp-lbl">Portfolio</div>
       <div class="chips">
         <span class="chip ayelet">Ayelet Yitzhak Tal</span>
-        <span class="chip ayelet">Valeria Rysevaa</span>
+        <span class="chip ayelet">Tom Jeni Gazala</span>
         <span class="chip ayelet">Alona Oren</span>
+        <span class="chip ayelet">Asa</span>
+        <span class="chip ayelet">Nurit</span>
       </div>
     </div>
 
@@ -485,11 +498,11 @@
       <div class="change-note">← Was: Data Science</div>
       <!-- Desk grid: names per screenshot layout -->
       <div class="sg-wrap">
-        <div class="win-bar has-pillar"></div>
+        <div class="win-bar"></div>
         <div class="sg">
           <div class="sd k">Bene</div><div class="sd k">Adam</div><div class="sd e"></div><div class="sd e"></div>
-          <div class="sd k">Carina</div><div class="sd k">Elad</div><div class="sd k">Navit</div><div class="sd k">Asa</div>
-          <div class="sd k">Daniela/🤱Vika</div><div class="sd k">Sophie</div><div class="sd k">Oren</div><div class="sd k">Nurit</div>
+          <div class="sd k">Carina</div><div class="sd k">Elad</div><div class="sd k">Navit</div><div class="sd k">🤱 Vika</div>
+          <div class="sd k">Daniela</div><div class="sd k">Sophie</div><div class="sd k">Oren</div><div class="sd pending">Val ?</div>
           <div class="sd k">Schneur</div><div class="sd e"></div><div class="sd e"></div><div class="sd e"></div>
         </div>
       </div>
@@ -504,8 +517,7 @@
         <span class="chip risk">Oren Richter</span>
         <span class="chip risk">Schneur K.</span>
         <span class="chip risk">Sophie Goldstein</span>
-        <span class="chip risk">Asa</span>
-        <span class="chip risk">Nurit</span>
+        <span class="chip risk">Valeria Rysevaa</span>
         <span class="chip mat">🤱 Viktoriia L.</span>
       </div>
     </div>
@@ -528,7 +540,7 @@
         <div class="win-bar"></div>
         <div class="sg">
           <div class="sd k">Itai</div><div class="sd k">Oded</div><div class="sd k">Yonatan</div><div class="sd k">🤱 Adi</div>
-          <div class="sd k">Shanny</div><div class="sd k">Ran</div><div class="sd k">Grisha</div><div class="sd k">Mordechai</div>
+          <div class="sd k">Shanny</div><div class="sd k">Ran</div><div class="sd k">Grisha</div><div class="sd k">Mordi</div>
           <div class="sd k">Roi</div><div class="sd k">Amit</div><div class="sd k"></div><div class="sd k"></div>
           <div class="sd e"></div><div class="sd e"></div><div class="sd e"></div><div class="sd k"></div>
         </div>
@@ -564,7 +576,7 @@
       <!-- Desk grid: 206 — col layout 3|2 | aisle | 2|3 = 10 desks, all kept -->
       <!-- 206: 3,2,2,3 all keep, pillar near window -->
       <div class="sg-wrap">
-        <div class="win-bar has-pillar"></div>
+        <div class="win-bar"></div>
         <div class="sg">
           <div class="sd k">Ron R.</div><div class="sd e"></div><div class="sd e"></div><div class="sd k">Miran</div>
           <div class="sd k">Shai B.</div><div class="sd k">Andi</div><div class="sd k">Shazky</div><div class="sd k">Ram</div>
