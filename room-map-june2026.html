@@ -401,12 +401,141 @@
       margin-bottom: 12px;
     }
   }
+
+  /* ── Announcement banner ── */
+  .announcement {
+    background: linear-gradient(135deg, #dbeafe 0%, #e0e7ff 100%);
+    border: 2px solid #3b82f6;
+    border-radius: 10px;
+    padding: 18px 22px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 16px rgba(59,130,246,.15);
+  }
+  .announcement-title {
+    font-size: 16px;
+    font-weight: 900;
+    color: #1e3a8a;
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .announcement-date {
+    display: inline-block;
+    background: #1e40af;
+    color: #fff;
+    padding: 3px 10px;
+    border-radius: 12px;
+    font-size: 11px;
+    font-weight: 800;
+    margin-left: 6px;
+    letter-spacing: .3px;
+  }
+  .announcement-body {
+    font-size: 12.5px;
+    color: #1e293b;
+    line-height: 1.55;
+    margin-bottom: 10px;
+  }
+  .announcement-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-top: 10px;
+  }
+  .action-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    font-size: 12px;
+    color: #1e293b;
+  }
+  .action-icon {
+    flex-shrink: 0;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: #fff;
+    border: 1.5px solid #3b82f6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+  }
+  .action-text { padding-top: 2px; }
+  .action-text strong { color: #1e3a8a; }
+  .room-summary {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 12px 0 14px;
+  }
+  .room-card {
+    flex: 1 1 200px;
+    background: #fff;
+    border-left: 4px solid;
+    border-radius: 6px;
+    padding: 8px 12px;
+    box-shadow: 0 1px 3px rgba(0,0,0,.06);
+  }
+  .room-card-id {
+    font-size: 18px;
+    font-weight: 900;
+    line-height: 1.1;
+  }
+  .room-card-team {
+    font-size: 11px;
+    font-weight: 700;
+    color: #475569;
+    margin-top: 2px;
+  }
+  .room-card.r-fin    { border-color: var(--fin-color); }
+  .room-card.r-fin    .room-card-id { color: var(--fin-color); }
+  .room-card.r-ds     { border-color: var(--ds-color); }
+  .room-card.r-ds     .room-card-id { color: var(--ds-color); }
+  .room-card.r-risk   { border-color: var(--risk-color); }
+  .room-card.r-risk   .room-card-id { color: var(--risk-color); }
+  .room-card.r-ayelet { border-color: var(--ayelet-color); }
+  .room-card.r-ayelet .room-card-id { color: var(--ayelet-color); }
+  @media (max-width: 900px) {
+    .announcement { padding: 14px; }
+    .announcement-title { font-size: 14px; flex-wrap: wrap; }
+    .room-card { flex: 1 1 45%; }
+  }
 </style>
 </head>
 <body>
 
 <h1>Wix Payments IL — Floor Map <span class="badge">June 2026</span></h1>
 <p class="subtitle">Approved seating · Walk from right: Bathroom → Dining → 206 → 208 → 210 → 218</p>
+
+<div class="announcement">
+  <div class="announcement-title">
+    📍 New Seating Arrangements
+    <span class="announcement-date">Effective Sunday, June 14</span>
+  </div>
+  <div class="announcement-body">
+    Following today's restructure update, below is our updated floor plan for the Israeli team. Please take a moment to find your new spot and review your team's room.
+  </div>
+  <div class="announcement-actions">
+    <div class="action-item">
+      <div class="action-icon">🧹</div>
+      <div class="action-text"><strong>Today:</strong> Please clean up your current desk and pack your things, so Sunday's transition is smooth for everyone.</div>
+    </div>
+    <div class="action-item">
+      <div class="action-icon">🔄</div>
+      <div class="action-text"><strong>Want to swap seats within your team?</strong> Talk to your manager directly — no need to coordinate cross-team.</div>
+    </div>
+    <div class="action-item">
+      <div class="action-icon">❓</div>
+      <div class="action-text"><strong>Questions or concerns?</strong> Reach out to your manager or to Alona.</div>
+    </div>
+    <div class="action-item">
+      <div class="action-icon">📅</div>
+      <div class="action-text"><strong>See you Sunday</strong> in your new seat! ☀️</div>
+    </div>
+  </div>
+</div>
 
 <div class="mobile-hint">👉 Swipe sideways to see all rooms · Rotate phone for better view</div>
 
@@ -443,11 +572,10 @@
       <div class="room-accent"></div>
       <div class="room-id">218</div>
       <div class="room-name">Legal · Finance · Portfolio</div>
-      <div class="room-sub">(Ayelet) · cap. 13</div>
+      <div class="room-sub">cap. 13</div>
       <div class="mini-stats">
         <div class="ms"><div class="ms-val">13</div><div class="ms-lbl">Cap</div></div>
         <div class="ms"><div class="ms-val">12</div><div class="ms-lbl">People</div></div>
-        <div class="ms"><div class="ms-val">1</div><div class="ms-lbl">Open</div></div>
       </div>
       <div class="change-note">← Was: Legal & Finance</div>
       <!-- Desk grid: 218 — 3|3 | aisle | 3|4 = 13 desks, remove col4 row4 -->
@@ -488,12 +616,11 @@
     <div class="room r210">
       <div class="room-accent"></div>
       <div class="room-id">210</div>
-      <div class="room-name">Portfolio – Risk</div>
-      <div class="room-sub">Navit's team · cap. 11</div>
+      <div class="room-name">Portfolio Risk</div>
+      <div class="room-sub">cap. 11</div>
       <div class="mini-stats">
         <div class="ms"><div class="ms-val">11</div><div class="ms-lbl">Cap</div></div>
         <div class="ms"><div class="ms-val">11</div><div class="ms-lbl">People</div></div>
-        <div class="ms"><div class="ms-val">—</div><div class="ms-lbl">Open</div></div>
       </div>
       <div class="change-note">← Was: Data Science</div>
       <!-- Desk grid: names per screenshot layout -->
@@ -527,11 +654,10 @@
       <div class="room-accent"></div>
       <div class="room-id">208</div>
       <div class="room-name">Data Science</div>
-      <div class="room-sub">DS cluster · cap. 13</div>
+      <div class="room-sub">cap. 13</div>
       <div class="mini-stats">
         <div class="ms"><div class="ms-val">13</div><div class="ms-lbl">Cap</div></div>
         <div class="ms"><div class="ms-val">10</div><div class="ms-lbl">People</div></div>
-        <div class="ms"><div class="ms-val">3</div><div class="ms-lbl">Open</div></div>
       </div>
       <div class="change-note">← Was: Onboarding</div>
       <!-- Desk grid: 208 — 3|3 | aisle | 3|4 = 13 desks, remove col4 row4 -->
@@ -565,12 +691,11 @@
     <div class="room r206">
       <div class="room-accent"></div>
       <div class="room-id">206</div>
-      <div class="room-name">Fin / Account</div>
-      <div class="room-sub">+ Omer Shazky · cap. 10</div>
+      <div class="room-name">Account · Fin. Management</div>
+      <div class="room-sub">cap. 10</div>
       <div class="mini-stats">
         <div class="ms"><div class="ms-val">10</div><div class="ms-lbl">Cap</div></div>
         <div class="ms"><div class="ms-val">10</div><div class="ms-lbl">People</div></div>
-        <div class="ms"><div class="ms-val">—</div><div class="ms-lbl">Open</div></div>
       </div>
       <div class="change-note">← Was: FMG</div>
       <!-- Desk grid: 206 — col layout 3|2 | aisle | 2|3 = 10 desks, all kept -->
